@@ -1,23 +1,36 @@
 
-    body {
+body {
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f0f0f0;
-    }
-
-    .calculadora {
+      background-color: #000827;
+}
+      body.c-Cientifica{
+      background-color: greenyellow;
+      font-family:"Courier New", monospace;
+display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+}
+.calculadora {
       width: 300px;
       background: #ffffff;
       border-radius: 10px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
       padding: 20px;
     }
-
-    .pantalla {
+.calculadora.c-Cientifica {
+      width: 300px;
+      background: #78397399 ;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+}
+.pantalla {
       width: 100%;
       height: 50px;
       background: #e0e0e0;
@@ -28,15 +41,32 @@
       box-sizing: border-box;
       margin-bottom: 20px;
       overflow: hidden;
+     box-shadow: #00272663,5px,5px,5px;
+  text-shadow: #00272663;
+      z-index: -2;
     }
+.pantalla.c-Cientifica {
+  width: 100%;
+  height: 50px;
+  background: #729380;
+  border-radius: 5px;
+  text-align: right;
+  font-size: 1.5em;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px #00272663;
+  text-shadow: #00272663;
+}
 
-    .botones {
+.botones {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
     }
 
-    .btn {
+.btn {
       height: 50px;
       background: #007bff;
       color: white;
@@ -45,21 +75,123 @@
       font-size: 1.2em;
       cursor: pointer;
       transition: 0.2s;
+      
     }
 
-    .btn:hover {
+.btn:hover {
       background: #0056b3;
     }
 
-    .btn#c,
-    .btn#borrar,
-    .btn#igual {
+.btn#c,
+.btn#borrar,
+.btn#igual {
       background: #ff5722;
     }
 
-    .btn#c:hover,
-    .btn#borrar:hover,
-    .btn#igual:hover {
+.btn#c:hover,
+.btn#borrar:hover,
+.btn#igual:hover {
       background: #e64a19;
+      background-color: red;
     }
-  
+.btn#c:hover.c-Cientifica,
+.btn#borrar:hover.c-Cientifica,
+.btn#igual:hover.c-Cientifica{
+      background-color: yellow;
+}
+video{
+  z-index: -2;
+  overflow-y: auto;
+  width: 200px;
+  display: flex;
+  min-width: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+  #parentesis1:hover,
+  #parentesis2:hover{
+    background-color: red;
+  }
+
+.calculator {
+      background-color: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      width: 400px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+#pantalla1 {
+      width: 100%;
+      height: 80px;
+      background-color: #767289;
+      border-radius: 5px;
+      text-align: right;
+      font-size: 1.5em;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      overflow: hidden;
+     box-shadow: #00272663,5px,5px,5px;
+  text-shadow: #00272663;
+      z-index: 1;
+    }
+
+    /* Pantalla o display de la calculadora */
+    .display {
+      background-color: #444;
+      color: #fff;
+      font-size: 2rem;
+      text-align: right;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      min-height: 50px;
+      overflow-x: auto;
+    }
+    /* Contenedor de botones en forma de cuadrícula */
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 10px;
+    }
+    /* Estilos para cada botón */
+    .btn1 {
+      background-color: #333;
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn1:hover {
+      background-color: #555;
+    }
+    /* Botones de operaciones (destacados) */
+    .btn-operator1 {
+      background-color: #fe9505;
+    }
+    .btn-operator1:hover {
+      background-color: #e08904;
+    }
+    /* Para que algunos botones abarquen más de una columna */
+    .span-two1 {
+      grid-column: span 2;
+    }
+#c-Cientifica:hover{
+      background-color: tomato;
+}
+.toggle-cientifica:hover{
+      background-color: greenyellow;
+}
+#Funciones-Trigonométricas,
+#raiz-cuadrada,
+#logaritmo, 
+#logaritmo-natural
+{
+      background-color: #FF8C00;
+}

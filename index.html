@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="es">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <link href="styles/style.css" rel="stylesheet" href="styles/style.css">
-  <title>Hello, World!</title>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <div class="calculadora">
-    <div class="pantalla">0</div>
+  <!-- Botones para cambiar modos -->
+  
+    <!-- Botón para mostrar/ocultar la sección con funciones científicas -->
+    <button class="toggle-cientifica">Toggle Científica</button>
+    <!-- Botón para alternar clases en body, calculadora y pantalla (p.ej. para cambiar estilos) -->
+    <button type="button" id="c-Cientifica">Calculadora Científica</button>
+  
+
+  <!-- Calculadora principal -->
+  <div class="calculadora" id="calculadora">
+    <!-- Pantalla con video de fondo y área para mostrar el resultado -->
+    <div  id="pantalla"class="pantalla">
+      <video src="imagenes/video.mp4" autoplay muted loop id="video" preload="auto"></video>
+      <span id="display">0</span>
+    </div>
+    <!-- Botones básicos de la calculadora -->
     <div class="botones">
       <button class="btn">7</button>
       <button class="btn">8</button>
@@ -23,53 +36,76 @@
       <button class="btn">3</button>
       <button class="btn">*</button>
       <button class="btn">0</button>
-      <button class = "btn">.</button>
+      <button class="btn">.</button>
       <button class="btn" id="igual">=</button>
       <button class="btn">+</button>
       <button class="btn" id="c">C</button>
+      <button class="btn" id="parentesis1">(</button>
+      <button class="btn" id="parentesis2">)</button>
       <button class="btn">-</button>
     </div>
   </div>
-  <script>
-  const pantalla = document.querySelector(".pantalla");
-  const botones = document.querySelectorAll(".btn");
-  
-  botones.forEach(boton => {
-    boton.addEventListener("click", () => {
-      const botonApretado = boton.textContent;
 
-      if (boton.id === "c") {
-        pantalla.textContent = "0";
-        return;
-      }
+  <!-- Sección de funciones científicas (inicialmente puede estar oculta mediante CSS) -->
+  <section class="calculadoraC">
+    <div id="pantalla1">
+      
+    </div>
+    <div class="calculator" id="calculator-sci">
+    <!-- Pantalla -->
+    
+    <!-- Botones en cuadrícula (6 columnas por fila) -->
+    <div class="buttons">
+      <!-- Fila 1: Funciones científicas -->
+      <button class="btn1"   id="Funciones-Trigonométricas">sin</button>
+      <button class="btn1" id="Funciones-Trigonométricas">cos</button>
+      <button class="btn1" id="Funciones-Trigonométricas">tan</button>
+      <button class="btn1" id="logaritmo">log</button>
+      <button class="btn1" id="logaritmo-natural">ln</button>
+      <button class="btn1" id="raiz-cuadrada">√</button><!--La raíz cuadrada de un número es el factor que multiplicamos por sí mismo para obtener ese número-->
+      
+      <!-- Fila 2: Funciones científicas adicionales -->
+      <button class="btn1">x²</button>
+      <button class="btn1">x³</button>
+      <button class="btn1">^</button>
+      <button class="btn1">(</button>
+      <button class="btn1">)</button>
+      <button class="btn1">%</button>
+      
+      <!-- Fila 3: Números y operaciones básicas -->
+      <button class="btn1">7</button>
+      <button class="btn1">8</button>
+      <button class="btn1">9</button>
+      <button class="btn1">/</button>
+      <button class="btn1" id="c1">Cc</button>
+      <button class="btn1" id="borrar1">  ➖</button>
+      
+      <!-- Fila 4: Números y operaciones básicas -->
+      <button class="btn1">4</button>
+      <button class="btn1">5</button>
+      <button class="btn1">6</button>
+      <button class="btn1">*</button>
+      <button class="btn1">±</button>
+      <button class="btn1">1/x</button>
+      
+      <!-- Fila 5: Números y operaciones básicas -->
+      <button class="btn1">1</button>
+      <button class="btn1">2</button>
+      <button class="btn1">3</button>
+      <button class="btn1" id="menos1">-</button>
+      <button class="btn1">π</button>
+      <button class="btn1">e</button>
+      
+      <!-- Fila 6: Última fila con 0, punto, Ans, = y + -->
+      <button class="span-two1">0</button>
+      <button class="btn1">.</button>
+      <button class="btn1">Ans</button>
+      <button class="btn1" id="igual1">=</button>
+      <button class="btn1" >+</button>
+    </div>
+  </div>
+  </section>
 
-      if (boton.id === "borrar") {
-        if (pantalla.textContent.length === 1 || pantalla.textContent === "ERROR!") {
-          pantalla.textContent = "0";
-        } else {
-          pantalla.textContent = pantalla.textContent.slice(0, -1);
-        }
-        return;
-      }
-
-      if (boton.id === "igual") {
-        try {
-          pantalla.textContent = eval(pantalla.textContent);
-        } catch {
-          pantalla.textContent = "ERROR!";
-        }
-        return;
-      }
-
-      if (pantalla.textContent === "0" || pantalla.textContent === "ERROR!") {
-        pantalla.textContent = botonApretado;
-      } else {
-        pantalla.textContent += botonApretado;
-      }
-    });
-  });
-</script>
-
-  
+  <script src="j.js"></script>
 </body>
 </html>
