@@ -122,6 +122,7 @@ video{
       width: 400px;
       padding: 20px;
       box-sizing: border-box;
+      display: none;
     }
 #pantalla1 {
       width: 100%;
@@ -139,18 +140,6 @@ video{
       z-index: 1;
     }
 
-    /* Pantalla o display de la calculadora */
-    .display {
-      background-color: #444;
-      color: #fff;
-      font-size: 2rem;
-      text-align: right;
-      padding: 10px;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      min-height: 50px;
-      overflow-x: auto;
-    }
     /* Contenedor de botones en forma de cuadrícula */
     .buttons {
       display: grid;
@@ -194,4 +183,22 @@ video{
 #logaritmo-natural
 {
       background-color: #FF8C00;
+}
+#x²,
+#x³,
+#elevacion,
+#corchete-A,
+#corchete-B,
+#Porcentaje{
+      background-color: #9400D3;
+}
+#c1,#borrar1{
+      background-color: #FF0000
+}
+#pi,
+#mas-menos,    
+#inverso-multiplicativo,
+#numero-de-Euler
+{ background-color: #4B0082;
+      
 }

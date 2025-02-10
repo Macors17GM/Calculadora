@@ -1,3 +1,4 @@
+//para la primera calculadora 
 const pantalla = document.querySelector(".pantalla");
 const botones = document.querySelectorAll(".btn");
 
@@ -36,6 +37,7 @@ botones.forEach(boton => {
   });
 });
 
+//para que reaccionen la boton 
 const toggleButton = document.getElementById("c-Cientifica");
 const mainCalc = document.querySelector(".calculadora");
 const sciCalc = document.querySelector(".calculator");
